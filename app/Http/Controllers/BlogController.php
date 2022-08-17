@@ -40,7 +40,7 @@ class BlogController extends Controller
         
        $request->validate([
            'title' => 'required',
-           'image' => 'required | image',
+        //    'image' => 'required | image',
            'body' => 'required',
            'category_id' => 'required'
        ]);
@@ -59,7 +59,7 @@ class BlogController extends Controller
        $body = $request->input('body');
 
        //File upload
-       $imagePath = 'storage/' . $request->file('image')->store('postsImages', 'public');
+    //    $imagePath = 'storage/' . $request->file('image')->store('postsImages', 'public');
 
        $post = new Post();
        $post->title = $title;
@@ -67,8 +67,8 @@ class BlogController extends Controller
        $post->slug = $slug;
        $post->user_id = $user_id;
        $post->body = $body;
-       $post->imagePath = $imagePath;
-
+    //    $post->imagePath = $imagePath;
+       $post->imagePath = "no data";
        $post->save();
        
        return redirect()->back()->with('status', 'Post Created Successfully');
@@ -87,7 +87,7 @@ class BlogController extends Controller
         }
         $request->validate([
             'title' => 'required',
-            'image' => 'required | image',
+            // 'image' => 'required | image',
             'body' => 'required'
         ]);
         
@@ -98,13 +98,14 @@ class BlogController extends Controller
         $body = $request->input('body');
  
         //File upload
-        $imagePath = 'storage/' . $request->file('image')->store('postsImages', 'public');
+        // $imagePath = 'storage/' . $request->file('image')->store('postsImages', 'public');
  
         
         $post->title = $title;
         $post->slug = $slug;
         $post->body = $body;
-        $post->imagePath = $imagePath;
+        // $post->imagePath = $imagePath;
+        $post->imagePath = "no data for update";
  
         $post->save();
         

@@ -10,9 +10,9 @@
           {{$post->created_at->diffForHumans()}}
           <span>Written By {{$post->user->name}}</span>
         </p>
-        <div class="single-blog-post-ContentImage" data-aos="fade-left">
+        <!-- <div class="single-blog-post-ContentImage" data-aos="fade-left">
           <img src="{{asset($post->imagePath)}}" alt="" />
-        </div>
+        </div> -->
 
         <div class="about-text">
          {!!$post->body!!}

@@ -14,8 +14,8 @@
                 <div class="specific-info">
                     <i class="fas fa-home"></i>
                     <div>
-                        <p class="title">4th floor, Hi Center</p>
-                        <p class="subtitle">Moi Avenue</p>
+                        <p class="title">5th floor, 909 Center</p>
+                        <p class="subtitle">Dhanmondi, Dhaka</p>
                     </div>
                 </div>
                 <div class="specific-info">

@@ -20,12 +20,12 @@
                         <p style="color: red; margin-bottom:25px;">{{ $message }}</p>
                     @enderror
                     <!-- Image -->
-                    <label for="image"><span>Image</span></label>
+                    <!-- <label for="image"><span>Image</span></label>
                     <input type="file" id="image" name="image" />
                     @error('image')
                         {{-- The $attributeValue field is/must be $validationRule --}}
                         <p style="color: red; margin-bottom:25px;">{{ $message }}</p>
-                    @enderror
+                    @enderror -->
                     <!-- Body-->
                     <label for="body"><span>Body</span></label>
                     <textarea id="body" name="body">{{ $post->body }}</textarea>
