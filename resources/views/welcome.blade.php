@@ -2,7 +2,8 @@
 
 @section('header')
     <!-- header -->
-    <header class="header" style=" background-image: url({{asset("images/photography.jpg")}});">
+    <!-- <header class="header" style=" background-image: url({{asset("images/photography.jpg")}});"> -->
+    <header class="header" style=" background-image: url({{asset("https://cdn.pixabay.com/photo/2017/08/01/00/01/map-2562138_960_720.jpg")}});">
       <div class="header-text">
         <h1>Irfan Hossain Blog</h1>
         <h4>Dashboard of interested topics...</h4>

@@ -59,6 +59,11 @@ Route::get('/about', function(){
     return view('about');
 })->name('about');
 
+// To profile page
+Route::get('/profile', function(){
+    return view('profile');
+})->name('profile');
+
 // To contact page
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 

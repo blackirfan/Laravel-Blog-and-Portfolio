@@ -35,6 +35,8 @@
                 <ul>
                     <li><a class="{{ Request::routeIs('welcome.index') ? 'active' : '' }}"
                             href="{{ route('welcome.index') }}">Home</a></li>
+                    <li><a class="{{ Request::routeIs('profile') ? 'active' : '' }}" href="{{ route('profile') }}">Profile</a>
+                    </li>
                     <li><a class="{{ Request::routeIs('blog.index') ? 'active' : '' }}"
                             href="{{ route('blog.index') }}">Blog</a></li>
                     <li><a class="{{ Request::routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
@@ -44,8 +46,8 @@
                     @guest
                         <li><a class="{{ Request::routeIs('login') ? 'active' : '' }}" href="{{ route('login') }}">Login</a>
                         </li>
-                        <li><a class="{{ Request::routeIs('register') ? 'active' : '' }}"
-                                href="{{ route('register') }}">Register</a></li>
+                        <!-- <li><a class="{{ Request::routeIs('register') ? 'active' : '' }}"
+                                href="{{ route('register') }}">Register</a></li> -->
                     @endguest
 
                     @auth
