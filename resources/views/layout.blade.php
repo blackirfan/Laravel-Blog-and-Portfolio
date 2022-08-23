@@ -53,6 +53,8 @@
                     @auth
                         <li><a class="{{ Request::routeIs('dashboard') ? 'active' : '' }}"
                                 href="{{ route('dashboard') }}">Dashboard</a></li>
+                        <li><a class="{{ Request::routeIs('profile_update') ? 'active' : '' }}"
+                        href="{{ route('profile_update') }}">Profile Update</a></li>
                     @endauth
                 </ul>
             </div>

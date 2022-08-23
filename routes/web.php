@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -54,6 +55,16 @@ Route::delete('/blog/{post}', [BlogController::class, 'destroy'])->name('blog.de
 // To store blog post to the DB
 Route::post('/blog', [BlogController::class, 'store'])->name('blog.store');
 
+// To store userDetails post to the DB
+Route::post('/user-details', [UserDetailsController::class, 'store'])->name('userDetails.store');
+
+// To create userDetails page
+Route::get('/user-details/create', [UserDetailsController::class, 'create'])->name('userDetails.create');
+
+// To update single UserDetails
+Route::put('/user-details/{userDetail}', [UserDetailsController::class, 'update'])->name('userDetails.update');
+// To edit single blog post
+Route::get('/user-details/edit/', [UserDetailsController::class, 'edit'])->name('userDetails.edit');
 // To about page
 Route::get('/about', function(){
     return view('about');
@@ -87,5 +98,9 @@ Route::resource('/categories', CategoryController::class);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/profile_update', function () {
+    return view('profile_update');
+})->middleware(['auth'])->name('profile_update');
 
 require __DIR__.'/auth.php';
