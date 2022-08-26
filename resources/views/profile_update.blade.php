@@ -18,6 +18,9 @@
                         <ul>
                             <li><a href="{{route('userDetails.create')}}">Create User Details</a></li>
                             <li><a href="{{route('userDetails.edit')}}">Update User Details</a></li>
+                            <li><a href="{{route('educations.create')}}">Create Educations</a></li>
+                            <li><a href="{{route('educations.list')}}">List Educations</a></li>
+                            <li><a href="{{route('publicationDetails.create')}}">Create Publication Details</a></li>
                             <!-- <li><a href="{{route('categories.create')}}">Create Category</a></li>
                             <li><a href="{{route('categories.index')}}">Categories List</a></li> -->
                         </ul>

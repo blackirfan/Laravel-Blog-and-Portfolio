@@ -119,4 +119,11 @@ class UserDetailsController extends Controller
         
         return redirect()->back()->with('status', 'User Details Edited Successfully');
     }
+
+    public function show(UserDetails $userDetail){
+        $userDetail = new UserDetails();
+
+        $userDetail = userdetails::where('id', 1)->first();
+        return view('profile', compact('userDetail'));
+    }
 }

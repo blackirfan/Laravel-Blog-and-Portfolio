@@ -4,6 +4,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserDetailsController;
+use App\Http\Controllers\PublicationDetailsController;
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -65,15 +67,31 @@ Route::get('/user-details/create', [UserDetailsController::class, 'create'])->na
 Route::put('/user-details/{userDetail}', [UserDetailsController::class, 'update'])->name('userDetails.update');
 // To edit single blog post
 Route::get('/user-details/edit/', [UserDetailsController::class, 'edit'])->name('userDetails.edit');
+
+// route for education
+
+// To store educations post to the DB
+Route::post('/educations', [EducationController::class, 'store'])->name('educations.store');
+
+// To create educations page
+Route::get('/educations/create', [EducationController::class, 'create'])->name('educations.create');
+// To list educations page
+Route::get('/educations/list', [EducationController::class, 'index'])->name('educations.list');
+// route for publication details
+
+// To store educations post to the DB
+Route::post('/publication-details', [PublicationDetailsController::class, 'store'])->name('publicationDetails.store');
+
+// To create educations page
+Route::get('/publication-details/create', [PublicationDetailsController::class, 'create'])->name('publicationDetails.create'); 
+
 // To about page
 Route::get('/about', function(){
     return view('about');
 })->name('about');
 
 // To profile page
-Route::get('/profile', function(){
-    return view('profile');
-})->name('profile');
+Route::get('/profile', [UserDetailsController::class, 'show'])->name('profile');
 
 // To contact page
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
