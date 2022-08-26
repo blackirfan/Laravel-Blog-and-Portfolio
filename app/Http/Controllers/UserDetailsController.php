@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\UserDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserDetailsController extends Controller
 {
@@ -122,8 +123,8 @@ class UserDetailsController extends Controller
 
     public function show(UserDetails $userDetail){
         $userDetail = new UserDetails();
-
         $userDetail = userdetails::where('id', 1)->first();
-        return view('profile', compact('userDetail'));
+        $educations = DB::table('educations')->select('institutionname','address','institutiontype','certificatetype','grade')->get();
+        return view('profile', compact('userDetail','educations'));
     }
 }

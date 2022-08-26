@@ -36,7 +36,7 @@ img {
   border-collapse: collapse;
   height: 320px;
   margin: auto;
-  max-width: 600px;
+  max-width: 950px;
   padding:50px;
   width: 100%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -143,7 +143,6 @@ td.text-right {
   text-align: right;
 }
 </style>
-
     <!-- <div class="card">
      Are you want to see Magic Card ?
     </div> -->
@@ -154,41 +153,38 @@ td.text-right {
 <br>
 <br>
 <br>
-<br>
-<br>
+<div class="header-text">
+  <h2>Educational Information</h2>
+</div>
+
 <br>
 <br>
 <br>
 <br>
 
+<br>
+<br>
 <table class="table-fill">
 <thead>
 <tr>
+<th class="text-left">Institution Name</th>
+<th class="text-left">Institution Type</th>
+<th class="text-left">Address</th>
 <th class="text-left">Degree</th>
 <th class="text-left">Grade</th>
 </tr>
 </thead>
 <tbody class="table-hover">
-<tr>
-<td class="text-left">January</td>
-<td class="text-left">$ 50,000.00</td>
-</tr>
-<tr>
-<td class="text-left">February</td>
-<td class="text-left">$ 10,000.00</td>
-</tr>
-<tr>
-<td class="text-left">March</td>
-<td class="text-left">$ 85,000.00</td>
-</tr>
-<tr>
-<td class="text-left">April</td>
-<td class="text-left">$ 56,000.00</td>
-</tr>
-<tr>
-<td class="text-left">May</td>
-<td class="text-left">$ 98,000.00</td>
-</tr>
+
+@foreach($educations as $key => $education)
+      <tr>
+      <td class="text-left">{{ $education->institutionname?? '' }}</td>
+      <td class="text-left">{{ $education->institutiontype?? '' }}</td>
+      <td class="text-left">{{ $education->address ?? '' }}</td>
+      <td class="text-left">{{ $education->certificatetype ?? '' }}</td>
+      <td class="text-left">{{ $education->grade ?? '' }}</td>
+      </tr>
+      @endforeach
 </tbody>
 </table>
 @endsection
