@@ -1,5 +1,6 @@
-<style>
 
+
+<style>
 * {
   margin: 0;
   padding: 0;
@@ -43,24 +44,26 @@ tbody tr:nth-child(odd) {
   background-color: #e9ecef;
 }
 </style>
+
+
 <div class="card">
 
 <table>
     <thead>
       <tr>
         <th> ID </th>
-        <th> Institution Name</th>
-        <th> Institution Type</th>
+        <th> Position</th>
+        <th> Time Period</th>
         <th> Action</th>
       </tr>
     </thead>
     <tbody>
-    @foreach($educations as $key => $education)
+    @foreach($workExperiences as $key => $workExperience)
       <tr>
-        <td>{{ $education->id ?? '' }}</td>
-        <td>{{ $education->institutionname?? '' }}</td>
-        <td> {{ $education->institutiontype?? '' }}</td>
-        <td><a href="{{ route('educations.edit', $education->id) }}">Edit</a></td>
+        <td>{{ $workExperience->id ?? '' }}</td>
+        <td>{{ $workExperience->position?? '' }}</td>
+        <td> {{ $workExperience->timeperiod?? '' }}</td>
+        <td><a href="{{ route('workExperience.edit', $workExperience->id) }}">Edit</a></td>
       </tr>
       @endforeach
     </tbody>

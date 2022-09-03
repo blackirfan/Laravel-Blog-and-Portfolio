@@ -21,6 +21,12 @@
                             <li><a href="{{route('educations.create')}}">Create Educations</a></li>
                             <li><a href="{{route('educations.list')}}">List Educations</a></li>
                             <li><a href="{{route('publicationDetails.create')}}">Create Publication Details</a></li>
+                            <li><a href="{{route('publicationDetails.list')}}">List Publication</a></li>
+                            
+                            <li><a href="{{route('workExperience.create')}}">Create work experience</a></li>
+                            <li><a href="{{route('workExperience.list')}}">work experience list</a></li>
+                            
+                            
                             <!-- <li><a href="{{route('categories.create')}}">Create Category</a></li>
                             <li><a href="{{route('categories.index')}}">Categories List</a></li> -->
                         </ul>

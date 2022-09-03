@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\UserDetailsController;
 use App\Http\Controllers\PublicationDetailsController;
+use App\Http\Controllers\workExperienceController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\WelcomeController;
 use App\Models\Category;
@@ -68,22 +69,50 @@ Route::put('/user-details/{userDetail}', [UserDetailsController::class, 'update'
 // To edit single blog post
 Route::get('/user-details/edit/', [UserDetailsController::class, 'edit'])->name('userDetails.edit');
 
-// route for education
 
+
+
+// route for education
 // To store educations post to the DB
 Route::post('/educations', [EducationController::class, 'store'])->name('educations.store');
-
 // To create educations page
 Route::get('/educations/create', [EducationController::class, 'create'])->name('educations.create');
 // To list educations page
-Route::get('/educations/list', [EducationController::class, 'index'])->name('educations.list');
-// route for publication details
+Route::get('/educations/list', [EducationController::class, 'list'])->name('educations.list');
+// To edit single educations
+Route::get('/educations/edit/{id}', [EducationController::class, 'edit'])->name('educations.edit');
+// To update single educations
+Route::put('/educations/update/{educations}', [EducationController::class, 'update'])->name('educations.update');
 
+
+
+// route for publication details
 // To store educations post to the DB
 Route::post('/publication-details', [PublicationDetailsController::class, 'store'])->name('publicationDetails.store');
-
 // To create educations page
 Route::get('/publication-details/create', [PublicationDetailsController::class, 'create'])->name('publicationDetails.create'); 
+// To list publication details
+Route::get('/publication-details/list', [PublicationDetailsController::class, 'list'])->name('publicationDetails.list');
+// To edit single publicationDetails
+Route::get('/publication-details/edit/{id}', [PublicationDetailsController::class, 'edit'])->name('publicationDetails.edit');
+// To update single publicationDetails
+Route::put('/publication-details/update/{publicationDetail}', [PublicationDetailsController::class, 'update'])->name('publicationDetails.update');
+
+
+
+// To store work experience post to the DB
+Route::post('/work-experience', [workExperienceController::class, 'store'])->name('workExperience.store');
+
+// To create work experience page
+Route::get('/work-experience/create', [workExperienceController::class, 'create'])->name('workExperience.create'); 
+// To list work experience page
+Route::get('/work-experience/list', [workExperienceController::class, 'list'])->name('workExperience.list');
+// To edit single work Experience
+Route::get('/work-experience/edit/{id}', [workExperienceController::class, 'edit'])->name('workExperience.edit');
+// To update single work Experience
+Route::put('/work-experience/update/{workExperience}', [workExperienceController::class, 'update'])->name('workExperience.update');
+
+
 
 // To about page
 Route::get('/about', function(){

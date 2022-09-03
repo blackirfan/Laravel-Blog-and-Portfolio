@@ -125,6 +125,8 @@ class UserDetailsController extends Controller
         $userDetail = new UserDetails();
         $userDetail = userdetails::where('id', 1)->first();
         $educations = DB::table('educations')->select('institutionname','address','institutiontype','certificatetype','grade')->get();
-        return view('profile', compact('userDetail','educations'));
+        $workExperience = DB::table('work_experience')->select('id','position','timeperiod','companyname','description')->get();
+        $publicationDetails = DB::table('publicationdetails')->select('name','journalname','year','sourcelink','publicationdetails')->get();
+        return view('profile', compact('userDetail','educations','workExperience','publicationDetails'));
     }
 }

@@ -9,12 +9,21 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+// proper code
 
-Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware('guest')
+// Route::get('/register', [RegisteredUserController::class, 'create'])
+//                 ->middleware('guest')
+//                 ->name('register');
+
+// Route::post('/register', [RegisteredUserController::class, 'store'])
+//                 ->middleware('guest');
+
+
+//worng code
+Route::get('/register')
                 ->name('register');
-
-Route::post('/register', [RegisteredUserController::class, 'store'])
+//worng code
+Route::post('/register')
                 ->middleware('guest');
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
